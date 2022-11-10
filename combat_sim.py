@@ -4,8 +4,8 @@ critc = 0
 play = input(">Play game (yes or no)?\n\n>")
 
 while play == "yes":
-    hpc = random.randint(22,57)
-    hpp = random.randint(20,50)
+    hpp = random.randint(22,57)
+    hpc = random.randint(20,50)
     name = input("\n>Enter your name\n\n>")
     opp = input("\n>Enter your opponent's name\n\n>")
     print(f"\n>{name} hp:{hpp} vs. {opp} hp:{hpc}\n\n")
@@ -54,9 +54,9 @@ while play == "yes":
         else:
             print (f"\n>{name}'s health is {hpp} and did {atkp} damage and blocked for {dn}.\n>{opp}'s health is {hpc} and did {atkc} damage.\n")
             
-    if hpc <= 0 and hpp != 0:
+    if hpc <= 0 and hpp >= 0:
         print(">You win. Yay!\n")
-    elif hpp <= 0 and hpc != 0:
+    elif hpp <= 0 and hpc >= 0:
         print(">You lose. Boo!\n")
     elif hpp <= 0 and hpc <= 0:
         print(f">As you slay {opp} both of you fall to the ground\n")
