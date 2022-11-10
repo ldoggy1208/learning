@@ -7,7 +7,7 @@ while play == "yes":
     hpc = random.randint(22,57)
     hpp = random.randint(20,50)
     name = input("\n>Enter your name\n\n>")
-    opp = input("\n>Enter your opponent's name\n>")
+    opp = input("\n>Enter your opponent's name\n\n>")
     print(f"\n>{name} hp:{hpp} vs. {opp} hp:{hpc}\n\n")
     
     while hpp > 0 and hpc > 0:
