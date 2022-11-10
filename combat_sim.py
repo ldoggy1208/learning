@@ -43,9 +43,9 @@ while play == "yes":
         hpc -= atkp
         hpp -= (atkc - dn)
         
-        if critp == 8 and critc != 8:
+        if critp == 8 and critc != 8 and op != "def":
             print (f"\n>{name} crit for {atkp} damage and has {hpp} health remaining.\n>{opp} has {hpc} health remaining and did {atkc} damage.\n")
-        elif critp == 8 and critc == 8:
+        elif critp == 8 and critc == 8 and op != "def":
             print (f"\n>Both {name} and {opp} crit.\n>{name} crit for {atkp} damage and has {hpp} health remaining.\n>{opp} crit for {atkc} damage and has {hpc} health remaining.\n")
         elif critp != 8 and critc == 8 and op == "def":
             print (f"\n>{name} countered {opp}'s attack.\n>{name} dealt {atkp} damage and healed up to {hpp}\n>{opp} has {hpc} health left.\n")
