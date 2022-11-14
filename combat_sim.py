@@ -50,7 +50,7 @@ while play == "yes":
         elif critp != 8 and critc == 8 and op == "def":
             print (f"\n>{name} countered {opp}'s attack.\n>{name} dealt {atkp} damage and healed up to {hpp}\n>{opp} has {hpc} health left.\n")
         elif critp != 8 and critc == 8 and op != "def":
-            print (f"\n>{opp} ctit {name} for {atkc} damage and has {hpc} left.\n>{name} dealt {atkp} damage and has {hpp} health left.\n")
+            print (f"\n>{opp} crit {name} for {atkc} damage and has {hpc} left.\n>{name} dealt {atkp} damage and has {hpp} health left.\n")
         else:
             print (f"\n>{name}'s health is {hpp} and did {atkp} damage and blocked for {dn}.\n>{opp}'s health is {hpc} and did {atkc} damage.\n")
             
