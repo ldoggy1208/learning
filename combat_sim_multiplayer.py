@@ -9,7 +9,6 @@ while play:
     hp2 = random.randint(20,50)
     name1 = input("\n>player 1 input name\n\n>")
     name2 = input("\n>player 2 input name\n\n>")
-    new_var
     print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
     
     while hp1 > 0 and hp2 > 0:
