@@ -2,7 +2,7 @@ import random
 play = True
 crit2 = 0
 crit1 = 0
-while play == True:
+while play:
     hp1 = random.randint(20,50)
     hp2 = random.randint(20,50)
     name1 = input("\n>player 1 input name\n\n>")
@@ -108,8 +108,4 @@ while play == True:
     elif hp1 <= 0 and hp2 <= 0:
         print(f">Both {name1} and {name2} slay eachother at the same time")
         
-    play = input(">Game over\n\n>Play again?\n>")
-    if play == "yes":
-        play = True
-    else:
-        play = False
+    play = input(">Game over\n\n>Play again?\n>") == "yes"
