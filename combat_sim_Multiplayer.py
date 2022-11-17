@@ -1,10 +1,8 @@
 import random
-
+play = True
 crit2 = 0
 crit1 = 0
-play = input(">Play game (yes or no)?\n\n>")
-
-while play == "yes":
+while play == True:
     hp1 = random.randint(20,50)
     hp2 = random.randint(20,50)
     name1 = input("\n>player 1 input name\n\n>")
@@ -96,9 +94,9 @@ while play == "yes":
             print(f">{name2} countered {name1}'s attack")
         if atk2 !=0 and crit2 == 8 and op1 == "def":
             print(f">{name1} countered {name2}'s attack")
-        if op1 == "def" and atk2 != 0:
+        if op1 == "def" and atk1 == 0:
             print(f">{name1} blocked {dn1} damage")
-        if op2 == "def" and atk1 != 0:
+        if op2 == "def" and atk2 == 0:
             print(f">{name2} blocked {dn2} damage")
         
         print(f">{name1} has {hp1} health remaining\n>{name2} has {hp2} health remaining")        
@@ -111,3 +109,7 @@ while play == "yes":
         print(f">Both {name1} and {name2} slay eachother at the same time")
         
     play = input(">Game over\n\n>Play again?\n>")
+    if play == "yes":
+        play = True
+    else:
+        play = False
