@@ -90,10 +90,10 @@ while play:
             if atk1 != 0:
                 if crit1 != 8:
                     print(f">{name1} dealt {atk1} damage")
-                if crit1 == 8:
+                else:
                     if op2 != "def":
                         print(f">{name1} crit for {atk1} damage")
-                    if op2 == "def":
+                    else:
                         print(f">{name2} countered {name1}'s attack")
         if op1 == "def":
             if atk2 != 0:
@@ -103,10 +103,10 @@ while play:
             if atk2 != 0:
                 if crit2 != 8:
                     print(f">{name2} dealt {atk2} damage")
-                if crit2 == 8:
+                else:
                     if op1 != "def":
                         print(f">{name2} crit for {atk2} damage")
-                    if op1 == "def":
+                    else:
                         print(f">{name1} countered {name2}'s attack")
         if op2 == "def":
             if atk1 != 0:
