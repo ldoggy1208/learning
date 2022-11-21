@@ -5,7 +5,11 @@ crit2 = 0
 crit1 = 0
 while play:
     hp1 = random.randint(20,50)
-    hp2 = random.randint(20,50)
+    hpm = random.randint(-10,10)
+    hp2 = hp1 + hpm
+    if hp2 > 50:
+        hp2 = 50
+        
     name1 = input("\n>player 1 input name\n\n>")
     name2 = input("\n>player 2 input name\n\n>")
     print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
