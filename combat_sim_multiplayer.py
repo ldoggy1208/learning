@@ -9,7 +9,9 @@ while play:
     hp2 = hp1 + hpm
     if hp2 > 50:
         hp2 = 50
-        
+    if hp2 < 20:
+        hp2 = 20
+
     name1 = input("\n>player 1 input name\n\n>")
     name2 = input("\n>player 2 input name\n\n>")
     print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
