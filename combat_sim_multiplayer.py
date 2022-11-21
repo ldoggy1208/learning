@@ -22,6 +22,8 @@ while play:
         dn2 = 0
         miss1 = 0
         miss2 = 0
+        hl1 = 0
+        hl2 = 0
 
         order = random.randint(1,2)
 
@@ -107,9 +109,11 @@ while play:
             hp1 -= (atk2 + foc2)-(dn1 * m1)
 
         if op1 == "def":
-            hp1 += random.randint(1,3)
+            hl1 += random.randint(1,3)
         if op2 == "def":
-            hp2 += random.randint(1,3)
+            hl2 += random.randint(1,3)
+        hp1 += hl1 + foc1
+        hp2 += hl2 + foc2
 
         print("\n")
         if miss1 == 10:
