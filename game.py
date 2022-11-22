@@ -44,6 +44,3 @@ elif initial == "win":
      input("Don't think you are getting away with that so easily.")
 else:
      input("Invalid input.")
-
-          
-     
