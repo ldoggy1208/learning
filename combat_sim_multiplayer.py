@@ -11,7 +11,9 @@ while play:
         hp2 = 50
     if hp2 < 20:
         hp2 = 20
-
+    m1 = 1
+    m2 = 1
+    
     name1 = input("\n>player 1 input name\n\n>")
     name2 = input("\n>player 2 input name\n\n>")
     print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
@@ -85,7 +87,7 @@ while play:
             if miss2 != 10:
                 crit2 = random.randint(1,8)
                 if crit2 == 8:
-                    atk2 *= 2*(atk2+foc2)     
+                    atk2 = 2*(atk2+foc2)     
             if miss2 == 10:
                 atk2 = 0
         elif op2 == "def":
