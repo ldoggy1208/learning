@@ -72,7 +72,7 @@ while play:
             if miss1 != 10:
                 crit1 = random.randint(1,8)
                 if crit1 == 8:
-                    atk1 = 2*(atk1+foc1)
+                    atk1 = 2*(atk1)+foc1
             if miss1 == 10:
                 atk1 = 0
         if op1 == "def":
@@ -87,7 +87,7 @@ while play:
             if miss2 != 10:
                 crit2 = random.randint(1,8)
                 if crit2 == 8:
-                    atk2 = 2*(atk2+foc2)     
+                    atk2 = 2*(atk2)+foc2     
             if miss2 == 10:
                 atk2 = 0
         elif op2 == "def":
