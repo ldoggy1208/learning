@@ -43,12 +43,16 @@ while play:
             m1 -= 0.2
         elif op1 != "def":
             m1 = 1
-
+        if m1 < 0:
+            m1 = 0
+        
         if op2 == "def":
             m2 -= 0.2
         elif op2 != "def":
             m2 = 1
-
+        if m2 < 0:
+            m2 = 0
+            
         if order == 1:
             op1 = input(f"\n>{name1} choose atk, def or foc\n>")
             while op1 != "atk" and op1 != "def" and op1 != "foc":
