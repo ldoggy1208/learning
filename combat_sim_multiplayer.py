@@ -71,10 +71,15 @@ while play:
             miss1 = random.randint(1,10)
             if miss1 != 10:
                 crit1 = random.randint(1,8)
+                miss1 = False
                 if crit1 == 8:
                     atk1 = 2*(atk1)+foc1
+                    crit1 = True
+                else:
+                    crit1 = False
             if miss1 == 10:
                 atk1 = 0
+                miss1 = True
         if op1 == "def":
             dn1 = 20
         if op1 == "foc":
@@ -86,10 +91,15 @@ while play:
             miss2 = random.randint(1,10)
             if miss2 != 10:
                 crit2 = random.randint(1,8)
+                miss2 = False
                 if crit2 == 8:
-                    atk2 = 2*(atk2)+foc2     
+                    atk2 = 2*(atk2)+foc2
+                    crit2 = True
+                else:
+                    crit2 = False   
             if miss2 == 10:
                 atk2 = 0
+                miss2 = True
         elif op2 == "def":
             dn2 = 20
         elif op2 == "foc":
@@ -102,12 +112,12 @@ while play:
             dn2 = atk1
          
         if op2 == "atk":            
-            if crit2 == 8 and op1 == "def":
+            if crit2 == True and op1 == "def":
                 atk1 = (atk2 / 2)
                 atk2 = 0
         
         if op1 == "atk":
-            if crit1 == 8 and op2 == "def":
+            if crit1 == True and op2 == "def":
                 atk2 = (atk1 / 2)
                 atk1 = 0
 
@@ -124,14 +134,14 @@ while play:
         hp2 += hl2 + foc2
 
         print("\n")
-        if miss1 == 10:
+        if miss1 == True:
             print(f">{name1} missed their attack")
-        if miss2 == 10:
+        if miss2 == True:
             print(f">{name2} missed their attack")
 
         if op1 == "atk":
             if atk1 != 0:
-                if crit1 != 8:
+                if crit1 == False:
                     print(f">{name1} dealt {atk1 + foc1} damage")
                 else:
                     if op2 != "def":
@@ -146,7 +156,7 @@ while play:
 
         if op2 == "atk":
             if atk2 != 0:
-                if crit2 != 8:
+                if crit2 == False:
                     print(f">{name2} dealt {atk2+foc2} damage")
                 else:
                     if op1 != "def":
@@ -159,7 +169,7 @@ while play:
         if op2 == "foc":
             print(f">{name2} focused to a level of {foc2}")
         if op1 == "def" and op2 == "def":
-            print(f">Moronicly, both {name1} and {name2} tried to defend eachother")
+            print(f">Moronicly, both {name1} and {name2} tried to defend each other")
         print(f"\n>{name1} has {hp1} health remaining\n>{name2} has {hp2} health remaining")        
             
     if hp2 <= 0 and hp1 >= 0:
