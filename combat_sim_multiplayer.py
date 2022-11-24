@@ -52,7 +52,7 @@ while play:
             m2 = 1
         if m2 < 0:
             m2 = 0
-            
+
         if order == 1:
             op1 = input(f"\n>{name1} choose atk, def or foc\n>")
             while op1 != "atk" and op1 != "def" and op1 != "foc":
