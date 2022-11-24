@@ -26,6 +26,7 @@ while play:
     op1 = 0
     op2 = 0
 
+
     while hp1 > 0 and hp2 > 0:
         atk1 = 0
         atk2 = 0
@@ -131,10 +132,10 @@ while play:
 
         if op1 == "def":
             hl1 += random.randint(1,3)
+            hp1 += hl1 + foc1
         if op2 == "def":
             hl2 += random.randint(1,3)
-        hp1 += hl1 + foc1
-        hp2 += hl2 + foc2
+            hp2 += hl2 + foc2
 
         print("\n")
         if miss1 == True:
