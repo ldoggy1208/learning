@@ -16,6 +16,9 @@ while play:
     
     name1 = input("\n>player 1 input name\n\n>")
     name2 = input("\n>player 2 input name\n\n>")
+    while name2 == name1:
+        print(f">player 2 you cannot have the same name as {name1}. for all i care, add a space after.")
+        name2= input("\n>player2 input name\n\n>")
     print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
 
     foc1 = 0
