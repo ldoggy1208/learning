@@ -36,6 +36,7 @@ while play:
         while name2 == name1:
             print(f">Come on I know you aren't trying to fight yourself")
             name2= input("\n>Input opponent name\n\n>")
+
         print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
 
         foc1 = 0
@@ -69,53 +70,53 @@ while play:
             if m2 < 0:
                 m2 = 0
 
+            op1 = input(f"\n>{name1} choose atk, def or foc\n>")
+            while op1 != "atk" and op1 != "def" and op1 != "foc":
+                print(f">{name1} invalid input")
                 op1 = input(f"\n>{name1} choose atk, def or foc\n>")
-                while op1 != "atk" and op1 != "def" and op1 != "foc":
-                    print(f">{name1} invalid input")
-                    op1 = input(f"\n>{name1} choose atk, def or foc\n>")
 
-                if dif == 0:
+            if dif == 0:
                     op2 = "def"
 
-                elif dif == 1:
-                    op2_input = random.randint(1,3)
+            elif dif == 1:
+                op2_input = random.randint(1,3)
+                if op2_input == 1:
+                    op2 = "atk"
+                elif op2_input == 2:
+                    op2 = "def"
+                else:
+                    op2 = "foc" 
+
+            elif dif == 2:                    
+                if prv == False:
+                    op2 = "foc"
+                else:
+                    op2 = prv
+
+            elif dif == 3:
+                op2_input = random.randint(1,5)
+                if foc2 < 3:
                     if op2_input == 1:
                         op2 = "atk"
                     elif op2_input == 2:
                         op2 = "def"
                     else:
-                        op2 = "foc" 
-
-                elif dif == 2:                    
-                    if prv == False:
                         op2 = "foc"
-                    else:
-                        op2 = prv
-
-                elif dif == 3:
-                    op2_input = random.randint(1,5)
-                    if foc2 < 3:
-                        if op2_input == 1:
-                            op2 = "atk"
-                        elif op2_input == 2:
-                            op2 = "def"
-                        else:
-                            op2 = "foc"
-                    else:
-                        if op2_input == 1 or op2_input == 2:
-                            op2 = "atk"
-                        if op2_input == 5:
-                            op2 = "foc"
-                        else:
-                            op2 = "def"
-                    
                 else:
-                    if op1 == "atk":
-                        op2 = "def"
-                    elif op1 == "def":
+                    if op2_input == 1 or op2_input == 2:
+                        op2 = "atk"
+                    if op2_input == 5:
                         op2 = "foc"
                     else:
-                        op2 = "atk"
+                        op2 = "def"
+                    
+            else:
+                if op1 == "atk":
+                    op2 = "def"
+                elif op1 == "def":
+                    op2 = "foc"
+                else:
+                    op2 = "atk"
 
             if op1 == "atk":
                 atk1 = random.randint(1,10)
@@ -222,7 +223,7 @@ while play:
             if op1 == "def" and op2 == "def":
                 print(f">Moronicly, both {name1} and {name2} tried to defend each other")
             print(f"\n>{name1} has {hp1} health remaining\n>{name2} has {hp2} health remaining")        
-                
+            print("hello")    
         if hp2 <= 0 and hp1 >= 0:
             print(f">{name1} wins!")
         elif hp1 <= 0 and hp2 >= 0:
