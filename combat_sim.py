@@ -8,16 +8,19 @@ while play:
     if pls == 1:
         dif_input = input(">Select difficulty (easy medium or hard}\n>")
         while dif_input != "easy" and dif_input != "medium" and dif_input != "hard" and dif_input != "impossible" and dif_input != "test":
-            if dif_input == "test":
-                dif = 0
-            elif dif_input == "easy":
-                dif = 1
-            elif dif_input == "medium":
-                dif = 2
-            elif dif_input == "hard":
-                dif = 3
-            elif dif_input == "impossible":
-                dif = 4
+            dif_input = input(">Select difficulty (easy medium or hard)\n>")
+
+        if dif_input == "test":
+            dif = 0
+        elif dif_input == "easy":
+            dif = 1
+        elif dif_input == "medium":
+            dif = 2
+        elif dif_input == "hard":
+            dif = 3
+        elif dif_input == "impossible":
+            dif = 4
+            
         hp1 = random.randint(20,50)
         hpm = random.randint(-10,10)
         hp2 = hp1 + hpm
