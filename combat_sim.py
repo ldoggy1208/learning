@@ -6,8 +6,9 @@ crit1 = 0
 while play:
     pls = int(input(">Input number of players (1 or 2)\n>"))
     if pls == 1:
+        difficulty = ["test", "easy", "medium", "hard", "impossible"]
         dif_input = input(">Select difficulty (easy medium or hard}\n>")
-        while dif_input != "easy" and dif_input != "medium" and dif_input != "hard" and dif_input != "impossible" and dif_input != "test":
+        while dif_input not in difficulty:
             dif_input = input(">Select difficulty (easy medium or hard)\n>")
 
         if dif_input == "test":
