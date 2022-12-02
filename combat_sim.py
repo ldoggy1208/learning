@@ -1,5 +1,8 @@
 import random
 
+def valid_input(valid):
+    valid = input("Choose atk, def, or foc")
+
 play = True
 crit2 = 0
 crit1 = 0
