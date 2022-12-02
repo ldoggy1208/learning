@@ -1,8 +1,10 @@
 import random
 
-def valid_input(valid):
-    valid = input("Choose atk, def, or foc")
-
+def get_input(valid):
+    valid = input(">Choose atk, def, or foc")
+    if valid != "atk" and valid != "def" and valid != "foc":
+        valid = input(">Invalid input\n>Choose atk, def, or foc")
+    return valid
 play = True
 crit2 = 0
 crit1 = 0
@@ -77,10 +79,7 @@ while play:
             if m2 < 0:
                 m2 = 0
 
-            op1 = input(f"\n>{name1} choose atk, def or foc\n>")
-            while op1 != "atk" and op1 != "def" and op1 != "foc":
-                print(f">{name1} invalid input")
-                op1 = input(f"\n>{name1} choose atk, def or foc\n>")
+            get_input(op1)
 
             if dif == 0:
                     op2 = "def"
@@ -290,25 +289,18 @@ while play:
                 m2 = 0
 
             if order == 1:
-                op1 = input(f"\n>{name1} choose atk, def or foc\n>")
-                while op1 != "atk" and op1 != "def" and op1 != "foc":
-                    print(f">{name1} invalid input")
-                    op1 = input(f"\n>{name1} choose atk, def or foc\n>")
-                op2 = input(f"\n>{name2} choose atk, def or foc\n>")
-                while op2 != "atk" and op2 != "def" and op2 != "foc":
-                    print(f">{name2} invalid input")
-                    op2 = input(f"\n>{name2} choose atk, def or foc\n>")
-            
+                print(f">{name1}'s turn first")
+                get_input(op1)
 
+                print(f">{name2}'s turn second")
+                get_input(op2)
+            
             if order == 2:
-                op2 = input(f"\n>{name2} choose atk, def or foc\n>")
-                while op2 != "atk" and op2 != "def" and op2 != "foc":
-                    print(f">{name2} invalid input")
-                    op2 = input(f"\n>{name2} choose atk, def or foc\n>")
-                op1 = input(f"\n>{name1} choose atk, def or foc\n>")
-                while op1 != "atk" and op1 != "def" and op1 != "foc":
-                    print(f">{name1} invalid input")
-                    op1 = input(f"\n>{name1} choose atk, def or foc\n>")
+                print(f">{name2}'s turn first")
+                get_input(op2)
+                
+                print(f">{name1}'s turn second")
+                get_input(op1)
 
             if op1 == "atk":
                 atk1 = random.randint(1,10)
