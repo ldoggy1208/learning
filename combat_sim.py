@@ -4,8 +4,11 @@ play = True
 crit2 = 0
 crit1 = 0
 while play:
-    pls = int(input(">Input number of players (1 or 2)\n>"))
-    if pls == 1:
+    valid_input = ["1", "2", "credits"]
+    pls = input(">Input number of players (1 or 2) or type \"credits\" for credits\n>")
+    while pls not in valid_input:
+        pls = input(">Invalid selection\n>Input number of players (1 or 2) or type credits for credits\n>")
+    if pls == "1":
         difficulties = ["test", "easy", "medium", "hard", "impossible"]
         dif_input = input(">Select difficulty (easy medium or hard}\n>")
         while dif_input not in difficulties:
@@ -233,7 +236,7 @@ while play:
             print(f">Both {name1} and {name2} slay eachother at the same time")
             
         play = input(">Game over\n\n>Play again?\n>") == "yes"
-    if pls == 2:
+    elif pls == "2":
         hp1 = random.randint(20,50)
         hpm = random.randint(-10,10)
         hp2 = hp1 + hpm
@@ -420,3 +423,5 @@ while play:
             print(f">Both {name1} and {name2} slay eachother at the same time")
             
         play = input(">Game over\n\n>Play again?\n>") == "yes"
+    elif pls == "credits":
+        print(">This game was made by Liam Temple\n>With thanks to Michael Skyba for teaching me to code\n>partial thanks to Seb, Kolmyn, and Jay for beta testing")
