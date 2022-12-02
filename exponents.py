@@ -1,7 +1,7 @@
 def exponent(b, e):
     i = e
     ans = b
-    while i > 1:
+    for y in range(i):
         ans *= b
         i -= 1
         if i == 1:

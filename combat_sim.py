@@ -224,7 +224,7 @@ while play:
             if op1 == "def" and op2 == "def":
                 print(f">Moronicly, both {name1} and {name2} tried to defend each other")
             print(f"\n>{name1} has {hp1} health remaining\n>{name2} has {hp2} health remaining")        
-            print("hello")    
+                
         if hp2 <= 0 and hp1 >= 0:
             print(f">{name1} wins!")
         elif hp1 <= 0 and hp2 >= 0:
