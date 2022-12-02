@@ -5,6 +5,9 @@ def get_input(valid):
     if valid != "atk" and valid != "def" and valid != "foc":
         valid = input(">Invalid input\n>Choose atk, def, or foc")
     return valid
+def get_name(name):
+    name = input(">input your name")
+    return name
 play = True
 crit2 = 0
 crit1 = 0
@@ -40,11 +43,13 @@ while play:
         m1 = 1
         m2 = 1
         
-        name1 = input("\n>Input your name\n\n>")
-        name2 = input("\n>Input opponent name\n\n>")
+        print(">for you,")
+        get_name(name1)
+        print(">for opponent,")
+        get_name(name2)
         while name2 == name1:
             print(f">Come on I know you aren't trying to fight yourself")
-            name2= input("\n>Input opponent name\n\n>")
+            get_name(name2)
 
         print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
 
@@ -424,4 +429,4 @@ while play:
 
 >With thanks to Michael Skyba for teaching me to code
 
->partial thanks to Seb, Kolmyn, and Jay for beta testing""")
+>Partial thanks to Seb, Kolmyn, and Jay for beta testing""")
