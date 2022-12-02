@@ -12,7 +12,7 @@ while play:
         difficulties = ["test", "easy", "medium", "hard", "impossible"]
         dif_input = input(">Select difficulty (easy medium or hard}\n>")
         while dif_input not in difficulties:
-            dif_input = input("\n>Invalid gamemode. Maybe I'll add it soon?>Select difficulty (easy medium or hard)\n>")
+            dif_input = input("\n>Invalid difficulty. Maybe I'll add it soon?>Select difficulty (easy medium or hard)\n>")
 
         if dif_input == "test":
             dif = 0
