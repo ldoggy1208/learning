@@ -1,10 +1,8 @@
 def exponent(b, e):
-    ans = b
+    ans = 1
     for y in range(e):
         ans *= b
-    ans/=b
-    print(f"{b} to the power of {e} is {int(ans)}")
+    return ans
 base_input = int(input("input base number = "))
 exponent_input = int(input("input exponent number = "))
-exponent(base_input, exponent_input)
-
+print(f"{base_input} to the power of {exponent_input} is {exponent(base_input, exponent_input)}")

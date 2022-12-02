@@ -424,4 +424,9 @@ while play:
             
         play = input(">Game over\n\n>Play again?\n>") == "yes"
     elif pls == "credits":
-        print(">This game was made by Liam Temple\n>With thanks to Michael Skyba for teaching me to code\n>partial thanks to Seb, Kolmyn, and Jay for beta testing")
+        print("""
+>This game was made by Liam Temple
+
+>With thanks to Michael Skyba for teaching me to code
+
+>partial thanks to Seb, Kolmyn, and Jay for beta testing""")
