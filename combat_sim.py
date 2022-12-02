@@ -1,12 +1,12 @@
 import random
 
 def get_input(valid):
-    valid = input(">Choose atk, def, or foc")
+    valid = input(">Choose atk, def, or foc\n>")
     if valid != "atk" and valid != "def" and valid != "foc":
         valid = input(">Invalid input\n>Choose atk, def, or foc")
     return valid
 def get_name(name):
-    name = input(">input your name")
+    name = input(">input your name\n>")
     return name
 play = True
 crit2 = 0
