@@ -11,6 +11,8 @@ def get_name(name):
 play = True
 crit2 = 0
 crit1 = 0
+name1 = " "
+name2 = " "
 while play:
     valid_input = ["1", "2", "credits"]
     pls = input(">Input number of players (1 or 2) or type \"credits\" for credits\n>")
@@ -254,11 +256,13 @@ while play:
         m1 = 1
         m2 = 1
         
-        name1 = input("\n>player 1 input name\n\n>")
-        name2 = input("\n>player 2 input name\n\n>")
+        print(">Player 1,")
+        get_name(name1)
+        print(">Player 2,")
+        get_name(name2)
         while name2 == name1:
-            print(f">player 2 you cannot have the same name as {name1}. for all i care, add a space after.")
-            name2= input("\n>player2 input name\n\n>")
+            print(f">player 2 you cannot have the same name as {name1}. For all I care, add a space after.")
+            get_name(name2)
         print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
 
         foc1 = 0
