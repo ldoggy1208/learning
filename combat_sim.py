@@ -3,7 +3,7 @@ import random
 def get_input():
     valid = input(">Choose atk, def, or foc\n>")
     if valid not in valid_op:
-        valid = input(">Invalid input\n>Choose atk, def, or foc")
+        valid = input(">Invalid input\n>Choose atk, def, or foc\n>")
     return valid
 def get_name():
     name = input(">input your name\n>")
@@ -26,7 +26,7 @@ while play:
         difficulties = ["test", "easy", "medium", "hard", "impossible"]
         dif_input = input(">Select difficulty (easy medium or hard}\n>")
         while dif_input not in difficulties:
-            dif_input = input("\n>Invalid difficulty. Maybe I'll add it soon?>Select difficulty (easy medium or hard)\n>")
+            dif_input = input("\n>Invalid difficulty.>Select difficulty (easy medium or hard)\n>")
 
         if dif_input == "test":
             dif = 0
@@ -78,12 +78,17 @@ while play:
             hl1 = 0
             hl2 = 0
 
-            if op1 == "def":
-                m1 -= 0.2
+            main_dif = ["easy", "medium", "hard"]
+
+            if dif_input in main_dif:
+                if op1 == "def":
+                    m1 -= 0.2
+                else:
+                    m1 = 1
+                if m1 < 0:
+                    m1 = 0
             else:
                 m1 = 1
-            if m1 < 0:
-                m1 = 0
             
             if op2 == "def":
                 m2 -= 0.2
@@ -95,7 +100,7 @@ while play:
             op1 = get_input()
 
             if dif == 0:
-                    op2 = "def"
+                op2 = "def"
 
             elif dif == 1:
                 op2_input = random.randint(1,3)
