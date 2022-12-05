@@ -2,7 +2,7 @@ import random
 
 def get_input():
     valid = input(">Choose atk, def, or foc\n>")
-    if valid not in valid_op:
+    while valid not in valid_op:
         valid = input(">Invalid input\n>Choose atk, def, or foc\n>")
     return valid
 def get_name():
