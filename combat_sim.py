@@ -1,18 +1,22 @@
 import random
 
-def get_input(valid):
+def get_input():
     valid = input(">Choose atk, def, or foc\n>")
-    if valid != "atk" and valid != "def" and valid != "foc":
+    if valid not in valid_op:
         valid = input(">Invalid input\n>Choose atk, def, or foc")
     return valid
-def get_name(name):
+def get_name():
     name = input(">input your name\n>")
     return name
+
+valid_op = ["atk", "def", "foc"]
+
 play = True
 crit2 = 0
 crit1 = 0
 name1 = " "
 name2 = " "
+
 while play:
     valid_input = ["1", "2", "credits"]
     pls = input(">Input number of players (1 or 2) or type \"credits\" for credits\n>")
@@ -45,13 +49,15 @@ while play:
         m1 = 1
         m2 = 1
         
-        print(">for you,")
-        get_name(name1)
-        print(">for opponent,")
-        get_name(name2)
+        print(">For you,")
+        name1 = get_name()
+        
+        print(">For opponent,")
+        name2 = get_name()
+
         while name2 == name1:
             print(f">Come on I know you aren't trying to fight yourself")
-            get_name(name2)
+            name2 = get_name()
 
         print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
 
@@ -86,7 +92,7 @@ while play:
             if m2 < 0:
                 m2 = 0
 
-            get_input(op1)
+            op1 = get_input()
 
             if dif == 0:
                     op2 = "def"
@@ -257,12 +263,12 @@ while play:
         m2 = 1
         
         print(">Player 1,")
-        get_name(name1)
+        name1 = get_name
         print(">Player 2,")
-        get_name(name2)
+        name2 = get_name
         while name2 == name1:
             print(f">player 2 you cannot have the same name as {name1}. For all I care, add a space after.")
-            get_name(name2)
+            name2 = get_name
         print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
 
         foc1 = 0
@@ -299,17 +305,17 @@ while play:
 
             if order == 1:
                 print(f">{name1}'s turn first")
-                get_input(op1)
+                op1 = get_input()
 
                 print(f">{name2}'s turn second")
-                get_input(op2)
-            
+                op2 = get_input()
+
             if order == 2:
                 print(f">{name2}'s turn first")
-                get_input(op2)
+                op2 = get_input()
                 
                 print(f">{name1}'s turn second")
-                get_input(op1)
+                op1 = get_input()
 
             if op1 == "atk":
                 atk1 = random.randint(1,10)
