@@ -30,6 +30,7 @@ def getcard(ace, total):
 total = 0
 dtotal = 0
 card = 0
+fvalue = 0
 
 total, ace, face, suit = getcard(ace, total)
 print(f"\n>You flipped the {face} of {suit}" )
