@@ -2,6 +2,7 @@ import random
 
 ace = 0
 dace = 0
+play = True
 
 def getcard(ace, total):
     n = random.randint(1, 13)
@@ -27,54 +28,59 @@ def getcard(ace, total):
 
     return n, ace, face, suit
 
-total = 0
-dtotal = 0
-card = 0
-fvalue = 0
+while play:
+    total = 0
+    dtotal = 0
+    card = 0
+    fvalue = 0
 
-total, ace, face, suit = getcard(ace, total)
-print(f"\n>You flipped the {face} of {suit}" )
-card, ace, face, suit = getcard(ace, total)
-print(f"\n>You flipped the {face} of {suit}" )
-total += card
+    total, ace, face, suit = getcard(ace, total)
+    print(f"\n>You flipped the {face} of {suit}" )
+    card, ace, face, suit = getcard(ace, total)
+    print(f"\n>You flipped the {face} of {suit}" )
+    total += card
 
-dtotal, dace, face, suit = getcard(dace, dtotal)
-print(f"\n>The dealer flipped the {face} of {suit}")
-while total < 21 and dtotal < 21 and fvalue != "win":
-    print(f">Player card total >{total}< \n\n>Dealer card total >{dtotal}<\n")
+    dtotal, dace, face, suit = getcard(dace, dtotal)
+    print(f"\n>The dealer flipped the {face} of {suit}")
+    while total < 21 and dtotal < 21 and fvalue != "win":
+        print(f">Player card total >{total}< \n\n>Dealer card total >{dtotal}<\n")
 
-    op =  input(">Hit or pass?\n>")
-    options = ["hit", "pass"]
-    while op not in options:
-        op = input(">Invalid.\n>Hit or pass?\n>")
-    
-    if op == "pass" and dtotal < total: 
-        while op == "pass":
-            card, dace, face, suit, = getcard(ace, dtotal)
-            print(f"\n>The dealer flipped the {face} of {suit}" )
-            dtotal += card 
-            if dtotal > total:
-                op = "done"
-    
-    elif op == "hit":
-        card, ace, face, suit = getcard(ace, total)
-        print(f"\n>You flipped the {face} of {suit}" )
-        total += card
-    if dtotal > total:
-        fvalue = "win"
+        op =  input(">Hit or pass?\n>")
+        options = ["hit", "pass"]
+        while op not in options:
+            op = input(">Invalid.\n>Hit or pass?\n>")
+        
+        if op == "pass" and dtotal < total: 
+            while op == "pass":
+                card, dace, face, suit, = getcard(ace, dtotal)
+                print(f"\n>The dealer flipped the {face} of {suit}" )
+                dtotal += card 
+                if dtotal > total:
+                    op = "done"
+        
+        elif op == "hit":
+            card, ace, face, suit = getcard(ace, total)
+            print(f"\n>You flipped the {face} of {suit}" )
+            total += card
+        if dtotal > total:
+            fvalue = "win"
 
-    if total > 21 and ace > 0:
-        ace -= 1
-        total -= 10
-    if dtotal > 21 and dace > 0:
-        dace -= 1
-        dtotal -= 10
+        if total > 21 and ace > 0:
+            ace -= 1
+            total -= 10
+        if dtotal > 21 and dace > 0:
+            dace -= 1
+            dtotal -= 10
 
-if total > 21:
-    print(f"\n\n>You bust over 21 with {total}. You lose")
-elif dtotal > 21 and total < 21:
-    print(f"\n\n>The dealer busts over 21 with {dtotal} while you have {total}. You win")
-elif dtotal == 21:
-    print(f"\n\n>The dealer wins with a total of {dtotal} while you have {total}. You lose")
-elif total == 21:
-    print("\n\n>You hit exactly 21. You win.")
+    if total > 21:
+        print(f"\n\n>You bust over 21 with {total}. You lose")
+    elif dtotal > 21 and total < 21:
+        print(f"\n\n>The dealer busts over 21 with {dtotal} while you have {total}. You win")
+    elif dtotal == 21:
+        print(f"\n\n>The dealer wins with a total of {dtotal} while you have {total}. You lose")
+    elif total == 21:
+        print("\n\n>You hit exactly 21. You win.")
+
+    play = ("\n\n>Play again? (yes or no)")
+    if play == "yes":
+        play = True
