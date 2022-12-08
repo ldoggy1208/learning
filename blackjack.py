@@ -52,9 +52,9 @@ while play:
         
         if op == "pass" and dtotal < total: 
             while op == "pass":
-                card, dace, face, suit, = getcard(ace, dtotal)
+                dcard, dace, face, suit, = getcard(ace, dtotal)
                 print(f"\n>The dealer flipped the {face} of {suit}" )
-                dtotal += card 
+                dtotal += dcard 
                 if dtotal > total:
                     op = "done"
         
