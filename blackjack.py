@@ -39,7 +39,7 @@ total += card
 
 dtotal, dace, face, suit = getcard(dace, dtotal)
 print(f"\n>The dealer flipped the {face} of {suit}")
-while total < 21 and dtotal < 21:
+while total < 21 and dtotal < 21 and fvalue != "win":
     print(f">Player card total >{total}< \n\n>Dealer card total >{dtotal}<\n")
 
     op =  input(">Hit or pass?\n>")
@@ -60,8 +60,7 @@ while total < 21 and dtotal < 21:
         print(f"\n>You flipped the {face} of {suit}" )
         total += card
     if dtotal > total:
-        fvalue = dtotal
-        dtotal = 21
+        fvalue = "win"
 
     if total > 21 and ace > 0:
         ace -= 1
