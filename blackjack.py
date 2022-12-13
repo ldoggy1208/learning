@@ -33,7 +33,7 @@ while play:
     dtotal = 0
     card = 0
     fvalue = 0
-
+    end = False
     total, ace, face, suit = getcard(ace, total)
     print(f"\n>You flipped the {face} of {suit}" )
     card, ace, face, suit = getcard(ace, total)
@@ -74,15 +74,21 @@ while play:
         
         if total > 21:
             print(f"\n\n>You bust over 21 with {total}. You lose")
+            end = True
         elif dtotal > 21 and total < 21:
             print(f"\n\n>The dealer busts over 21 with {dtotal} while you have {total}. You win")
+            end = True
         elif dtotal == 21:
             print(f"\n\n>The dealer wins with a total of {dtotal} while you have {total}. You lose")
+            end = True
         elif total == 21:
             print("\n\n>You hit exactly 21. You win.")
+            end = True
         elif dtotal > total:
             print(f"\n\n>The dealer's hand of {dtotal} is greater than your hand of {total} You lose")
+            end = True
 
-    play = ("\n\n>Play again? (yes or no)\n>")
-    if play == "yes":
-        play = True
+        if end:
+            play_input = input("\n\n>Play again? (yes or no)\n>")
+            if play_input == "yes":
+                play = True
