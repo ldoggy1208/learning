@@ -71,7 +71,7 @@ while play:
         if dtotal > 21 and dace > 0:
             dace -= 1
             dtotal -= 10
-
+        
         if total > 21:
             print(f"\n\n>You bust over 21 with {total}. You lose")
         elif dtotal > 21 and total < 21:
@@ -80,6 +80,8 @@ while play:
             print(f"\n\n>The dealer wins with a total of {dtotal} while you have {total}. You lose")
         elif total == 21:
             print("\n\n>You hit exactly 21. You win.")
+        elif dtotal > total:
+            print(f"\n\n>The dealer's hand of {dtotal} is greater than your hand of {total} You lose")
 
     play = ("\n\n>Play again? (yes or no)\n>")
     if play == "yes":
