@@ -53,7 +53,7 @@ while play:
         if op == "pass" and dtotal < total: 
             while op == "pass":
                 dcard, dace, face, suit, = getcard(ace, dtotal)
-                print(f"\n>The dealer flipped the {face} of {suit}" )
+                print(f"\n>The dealer flipped the {face} of {suit}\n\n>Dealer total >{dtotal}<")
                 dtotal += dcard 
                 if dtotal > total:
                     op = "done"
@@ -72,15 +72,15 @@ while play:
             dace -= 1
             dtotal -= 10
 
-    if total > 21:
-        print(f"\n\n>You bust over 21 with {total}. You lose")
-    elif dtotal > 21 and total < 21:
-        print(f"\n\n>The dealer busts over 21 with {dtotal} while you have {total}. You win")
-    elif dtotal == 21:
-        print(f"\n\n>The dealer wins with a total of {dtotal} while you have {total}. You lose")
-    elif total == 21:
-        print("\n\n>You hit exactly 21. You win.")
+        if total > 21:
+            print(f"\n\n>You bust over 21 with {total}. You lose")
+        elif dtotal > 21 and total < 21:
+            print(f"\n\n>The dealer busts over 21 with {dtotal} while you have {total}. You win")
+        elif dtotal == 21:
+            print(f"\n\n>The dealer wins with a total of {dtotal} while you have {total}. You lose")
+        elif total == 21:
+            print("\n\n>You hit exactly 21. You win.")
 
-    play = ("\n\n>Play again? (yes or no)")
+    play = ("\n\n>Play again? (yes or no)\n>")
     if play == "yes":
         play = True
