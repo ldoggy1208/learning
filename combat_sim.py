@@ -440,13 +440,15 @@ crit1 = 0
 name1 = " "
 name2 = " "
 while play:
-    text = ">input number of players (1 or 2) or type \"credits\" for credits and \"help\" for what the options do\n>"
-    pls = get_input([1, 2, "credits" "help"], text)
+    text = ">Choose to play by typing \"play\", type \"credits\" for credits, or \"help\" for what the options do\n>"
+    pls = get_input(["playh", "credits", "help"], text)
 
-    if pls == "1":
-        one_player()
-    elif pls == "2":
-        two_player()
+    if pls == "play":
+        players = get_input(["1", "2"], ">1 player or 2 players?")
+        if players == "1":
+            one_player
+        if players == "2":
+            two_player
     elif pls == "credits":
         print("""
 >This game was made by Liam Temple
