@@ -440,8 +440,8 @@ crit1 = 0
 name1 = " "
 name2 = " "
 while play:
-    text = ">input number of players (1 or 2) or type \"credits\" for credits\n>"
-    pls = get_input([1, 2, "credits"], text)
+    text = ">input number of players (1 or 2) or type \"credits\" for credits and \"help\" for what the options do\n>"
+    pls = get_input([1, 2, "credits" "help"], text)
 
     if pls == "1":
         one_player()
@@ -454,3 +454,11 @@ while play:
 >With thanks to Michael Skyba for teaching me to code
 
 >Partial thanks to Seb, Kolmyn, and Jay for beta testing""")
+
+    elif pls == "help":
+        print("""
+>Atk attacks with a random attack power and your focus level
+
+>Def defends with a deminishing return and heals you a small ammount and your focus level and defending has a small chance to counterattack
+
+>Foc focuses and blocks a little bit of damage and increases focus level by one""")
