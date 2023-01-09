@@ -25,8 +25,13 @@ def getcard(ace, total):
     elif n == 1 and total <= 10:
         n = 11
         ace += 1 
-
     return n, ace, face, suit
+
+def get_option(valid_options, prompt_text):
+    op = input(prompt_text)
+    while op not in valid_options:
+        op = input(prompt_text)
+    return op
 
 while play:
     total = 0
@@ -44,10 +49,8 @@ while play:
     while total < 21 and dtotal < 21 and fvalue != "win":
         print(f">Player card total >{total}< \n\n>Dealer card total >{dtotal}<\n")
 
-        op =  input(">Hit or pass?\n>")
-        options = ["hit", "pass"]
-        while op not in options:
-            op = input(">Invalid.\n>Hit or pass?\n>")
+        valid_inputs = ["hit", "pass"]
+        op = get_option (valid_inputs, "Choose hit or pass\n>")
         
         if op == "pass" and dtotal < total: 
             while op == "pass":
