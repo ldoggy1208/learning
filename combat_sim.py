@@ -444,11 +444,11 @@ while play:
     pls = get_input(["play", "credits", "help"], text)
 
     if pls == "play":
-        players = get_input(["1", "2"], ">1 player or 2 players?")
+        players = get_input(["1", "2"], ">1 player or 2 players?\n>")
         if players == "1":
-            one_player
+            one_player()
         if players == "2":
-            two_player
+            two_player()
     elif pls == "credits":
         print("""
 >This game was made by Liam Temple
