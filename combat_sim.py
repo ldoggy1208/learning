@@ -441,7 +441,7 @@ name1 = " "
 name2 = " "
 while play:
     text = ">Choose to play by typing \"play\", type \"credits\" for credits, or \"help\" for what the options do\n>"
-    pls = get_input(["playh", "credits", "help"], text)
+    pls = get_input(["play", "credits", "help"], text)
 
     if pls == "play":
         players = get_input(["1", "2"], ">1 player or 2 players?")
