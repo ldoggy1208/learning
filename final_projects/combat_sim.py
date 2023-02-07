@@ -12,7 +12,7 @@ def get_name():
 
 def one_player():
     difficulties = ["test", "easy", "medium", "hard", "impossible"]
-    text = "\n>Invalid difficulty.>Select difficulty (easy medium or hard)\n>"
+    text = "\n>Invalid difficulty.\n>Select difficulty (easy medium or hard)\n>"
     dif_input = get_input(difficulties, text)
 
     if dif_input == "test":
