@@ -52,7 +52,7 @@ while play:
         valid_inputs = ["hit", "pass"]
         op = get_option (valid_inputs, "Choose hit or pass\n>")
         
-        if op == "pass" and dtotal < total: 
+        if op == "pass" and dtotal <= total: 
             while op == "pass" and dtotal < total:
                 dcard, dace, face, suit, = getcard(ace, dtotal)
                 print(f"\n>The dealer flipped the {face} of {suit}\n\n>Dealer total >{dtotal}<")
