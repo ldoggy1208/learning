@@ -29,7 +29,7 @@ public class LiamMyFavourites {
         System.out.println("My favourite colour is purple.");
         System.out.println("My favourite TV show is Family\tGuy.");
         System.out.println("I don't have a favourite movie");
-        System.out.println("My favourit tvideo game is \"Dark Souls III\"");
+        System.out.println("My favourit tvideo game is either \"Dark Souls III\"\t or\t \"Hollow Knight\"");
         // I assume by computer game video game was meant
         System.out.println("My favourite food is probably pizza");
         System.out.println("My favourite disney movie is \"The Lion King\"");
