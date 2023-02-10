@@ -38,7 +38,7 @@ public class LiamMyFavourites {
         System.out.println("9:\tMy favourite sport is baseball.");
         System.out.println("10:\tMy favourite sports team is the Toronto Blue Jays.");
         System.out.println("11:\tMy favourite book is \"Warriors: into the forest\" by E.Hunter.");
-        System.out.println("12:\tMy favourite school subject is math.")
+        System.out.println("12:\tMy favourite school subject is math.");
         System.out.println("13:\tIf I had to choose a country to visit, I would choose Yellowknife.");
         System.out.print("14:\tI have 2 siblings.\nAn older brother named Ethan.\nA younger sister named Olivia.\n");
         System.out.println("15:\tI chose to take computer programming because I recently got into coding with python and I assumed I should enhance my coding knowledge.");
