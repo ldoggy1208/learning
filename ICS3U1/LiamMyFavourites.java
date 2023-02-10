@@ -25,12 +25,12 @@ public class LiamMyFavourites {
  *13. What city would you like to visit?
  *14. Do you have any siblings? How many?
  *15. Why did you take computer programming?      
-*/   
+ */
         System.out.println("1:\tMy name is Liam Temple.");
         System.out.println("2:\tMy favourite colour is purple.");
         System.out.println("3:\tMy favourite TV show is Family Guy.");
         System.out.println("4:\tI don't have a favourite movie.");
-        System.out.println("5:\tMy favourite video game is either \"Dark Souls III\"\t or\t \"Hollow Knight\".");
+        System.out.println("5:\tMy favourite video game is either \"Dark Souls III\" or \"Hollow Knight\".");
         // I assume by computer game video game was meant
         System.out.println("6:\tMy favourite food is probably pizza.");
         System.out.println("7:\tI don't have a particularly favourite Disney movie or character.");
