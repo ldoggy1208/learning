@@ -5,12 +5,12 @@
  * @date Feb 9 2023
  * @Version 1.0 
  */
-class QuickStart{
+class ICS3UChapter1Temple{
     public static void main(String[] args) {
         System.out.println("Hello, World.");
-    }
-}
-    // end of main method
+    
+
+    }// end of main method
 
 
-//end of class
+}//end of class
