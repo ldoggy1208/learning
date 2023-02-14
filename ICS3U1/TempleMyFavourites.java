@@ -7,7 +7,7 @@
  * @Version 1.0
  */
 
-public class LiamMyFavourites {
+public class TempleMyFavourites {
     public static void main(String[] args) {
 /* Here is a list of the questions that will be answered
  *1. What is my name
