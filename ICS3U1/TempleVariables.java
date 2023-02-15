@@ -26,14 +26,13 @@ public class TempleVariables {
         //end of rectangle question
 
         double radius = 14;
-        final double pi = 31.141592653589793238464;
-        //setting of the radius and pi
+        //setting of the radius
 
         System.out.print("\n\nThe radius of the circle is "+radius);
         System.out.print(" cm");
         //declaring the radius
-        double area2 = (radius * radius) * pi;
-        double circumference = 2*pi*radius;
+        double area2 = radius * radius * 3.14;
+        double circumference = 2*3.14*radius;
         //calculating the circumference and area of the circle
         System.out.print("\nThe area of the circle is "+area2);
         System.out.print(" cm^2");
