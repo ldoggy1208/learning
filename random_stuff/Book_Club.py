@@ -1,9 +1,3 @@
-dayinput = None
-monthinput = None
-yearinput = None
-Pagest = None
-Pageen= None
-person = None
 person = int(input("1 for liam 2 for tony\n>"))
 monthinput = input("What month is it?\n>")
 dayinput = input("What day is it?\n>")
@@ -16,3 +10,5 @@ if person == 1:
 elif person == 2:
     f = open("random_stuff/Tony_records.txt", 'a')
     f.write(f"{monthinput}, {dayinput}, {yearinput}\npg.{Pagest} - pg.{Pageen}\n\n")
+else:
+    print("Invalid number")
