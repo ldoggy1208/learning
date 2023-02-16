@@ -65,8 +65,8 @@ public class TempleVariables {
         //calculating the average
         System.out.print("\n\nLiam Temple average = "+Average);
         //declaring the average
-
-        
         //end of marks question
+
+        scan.close();
     }//end of main method
 }//end of class
