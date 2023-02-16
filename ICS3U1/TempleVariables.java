@@ -51,7 +51,7 @@ public class TempleVariables {
         tempC = scan.nextInt();
         tempF = tempC * 9 / 5 + 32;
         //setting and calculating the temperatures
-        System.out.print(tempC +" degrees celsius is equal to "+tempF +" Degrees Fahrenheit");
+        System.out.print(tempC +" degrees Celsius is equal to "+tempF +" Degrees Fahrenheit");
         //declaring the temperatures
         //end of temperature question
 
