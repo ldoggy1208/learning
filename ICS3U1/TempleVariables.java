@@ -63,9 +63,10 @@ public class TempleVariables {
         //setting the variables
         Average = (Physics + Math + Foods + Entrepreneurship)/4;
         //calculating the average
-
         System.out.print("\n\nLiam Temple average = "+Average);
         //declaring the average
+
+        
         //end of marks question
     }//end of main method
 }//end of class
