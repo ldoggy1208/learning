@@ -5,7 +5,7 @@ if person == 1:
     yearinput = input("What year is it?\n>")
     Pagest = input("What page did you start on?\n>")
     Pageen = input("What page did you end on?\n>")
-    f = open("random_stuff/Liam_records.txt", 'a')
+    f = open("Book_Club_Records/Liam_records.txt", 'a')
     f.write(f"{monthinput}, {dayinput}, {yearinput}\npg.{Pagest} - pg.{Pageen}\n\n")
 elif person == 2:
     monthinput = input("What month is it?\n>")
@@ -13,7 +13,7 @@ elif person == 2:
     yearinput = input("What year is it?\n>")
     Pagest = input("What page did you start on?\n>")
     Pageen = input("What page did you end on?\n>")
-    f = open("random_stuff/Tony_records.txt", 'a')
+    f = open("Book_Club_Records/Tony_records.txt", 'a')
     f.write(f"{monthinput}, {dayinput}, {yearinput}\npg.{Pagest} - pg.{Pageen}\n\n")
 else:
     print("Invalid number")
