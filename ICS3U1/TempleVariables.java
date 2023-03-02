@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TempleVariables {
 
     public static void main(String[] args) {
-
+System
         int width;
         int length;
 
