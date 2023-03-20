@@ -6,16 +6,23 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TempleIPO",
+            "request": "launch",
+            "mainClass": "TempleIPO",
+            "projectName": "learning_6e3b7e13"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
         },
-    {
-        "type": "java",
-        "name": "Launch Java Program",
-        "request": "launch",
-        "mainClass": ""
-    },
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": ""
+        },
         {
             "name": "Python: Current File",
             "type": "python",
