@@ -38,4 +38,11 @@ value4 = total4 / ttotal * 100
 value5 = total5 / ttotal * 100
 value6 = total6 / ttotal * 100
 
-print(f"The average of times 1 was landed on was {value1}%\nThe average of times 2 was landed on was {value2}%\nThe average of times 3 was landed on was {value3}%\nThe average of times 4 was landed on was {value4}%\nThe average of times 5 was landed on was {value5}%\nThe average of times 6 was landed on was {value6}%")
+print(f"""
+The average of times 1 was landed on was {value1}%\n
+The average of times 2 was landed on was {value2}%\n
+The average of times 3 was landed on was {value3}%\n
+The average of times 4 was landed on was {value4}%\n
+The average of times 5 was landed on was {value5}%\n
+The average of times 6 was landed on was {value6}%
+""")
