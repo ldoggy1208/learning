@@ -15,7 +15,7 @@ public class TempleMethodsTask {
     static String input4;
     public static void main(String[] args) {
         try {
-            System.out.print("\nInput 1 for sum of between numbers:\nInput 2 for Distance between two points:\nInput 3 for factorial:\nInput 4 for odd number checker:\nInput 5 for ()\n>");
+            System.out.print("\nInput 1 for sum of between numbers:\nInput 2 for Distance between two points:\nInput 3 for factorial:\nInput 4 for odd number checker:\nInput 5 for password\n>");
             int value = scan.nextInt();
 
             if (value == 1) {
@@ -100,13 +100,13 @@ public class TempleMethodsTask {
         try {
             int base = Integer.parseInt(input1);
             int step = base;
-            int end = 1;
+            long end = 1;
             if (base > 0) {        
                 while (step > 0) {
                     end *= step;
                     step--;
                 } 
-                result = Integer.toString(end);
+                result = Long.toString(end);
             }
             else if (base == 0) {
                 result = Integer.toString(1);
