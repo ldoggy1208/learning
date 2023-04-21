@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TempleMethodsTask",
+            "request": "launch",
+            "mainClass": "TempleMethodsTask",
+            "projectName": "learning_6e3b7e13"
+        },
+        {
+            "type": "java",
             "name": "TempleIPO",
             "request": "launch",
             "mainClass": "TempleIPO",
