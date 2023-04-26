@@ -15,6 +15,7 @@ public class TempleLArraysIntro {
         String periodStartTimes[] = {"8:05", "9:25", "10:45", "12:05", "1:25"};
         int squares[] = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100};
         char alphabetStart[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+        
         stringArrayPrint(romanNumerals);
         System.out.println("\n");
         intArrayPrint(fibonacci);
