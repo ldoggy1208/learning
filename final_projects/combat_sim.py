@@ -260,12 +260,12 @@ def two_player():
     m2 = 1
     
     print(">Player 1,")
-    name1 = get_name
+    name1 = get_name()
     print(">Player 2,")
-    name2 = get_name
+    name2 = get_name()
     while name2 == name1:
         print(f">player 2 you cannot have the same name as {name1}. For all I care, add a space after.")
-        name2 = get_name
+        name2 = get_name()
     print(f"\n>{name1} hp:{hp1} vs. {name2} hp:{hp2}\n\n")
 
     foc1 = 0

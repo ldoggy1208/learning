@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TempleLArraysSummative",
+            "request": "launch",
+            "mainClass": "TempleLArraysSummative",
+            "projectName": "learning_6e3b7e13"
+        },
+        {
+            "type": "java",
+            "name": "ArraysStuff",
+            "request": "launch",
+            "mainClass": "ArraysStuff",
+            "projectName": "learning_6e3b7e13"
+        },
+        {
+            "type": "java",
             "name": "TempleLArraysIntro",
             "request": "launch",
             "mainClass": "TempleLArraysIntro",
