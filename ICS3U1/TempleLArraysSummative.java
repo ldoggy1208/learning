@@ -1,4 +1,6 @@
+import java.util.InputMismatchException;
 import java.util.Random;
+import java.util.Scanner;
 public class TempleLArraysSummative {
     static double average;
     public static void main(String[] args) {
@@ -24,6 +26,7 @@ public class TempleLArraysSummative {
         average = Step6(list1);
         System.out.println("The average of elements in list1 is "+average);
         System.out.println("\n\nStep 7:");
+        Step7(list2);
 
     }//end of main
 
@@ -68,8 +71,30 @@ public class TempleLArraysSummative {
     }//end of Step6
 
     private static void Step7(int[] list) {
-        
-    }//end of Step7
+        Scanner scan = new Scanner(System.in);
+        int[] found = new int[20];
+        int count = 0;
+    
+        try {
+            System.out.print("\nInput number to search for\n>");
+            int search = scan.nextInt();
+    
+            for (int index = 0; index < 20; index++) {
+                if (list[index] == search) {
+                    found[count] = list[index]; // add the matching value to the 'found' array
+                    count++;
+                }
+            }
+    
+            System.out.println("Values found:");
+            for (int i = 0; i < count; i++) {
+                System.out.println(found[i]);
+            }
+        } catch (InputMismatchException e) {
+            System.err.println("Error: Input must be an integer!");
+        }
+    }
+    
 
     private static void display(int[] list1, int[] list2) {
         System.out.println("Displaying list 1:");
