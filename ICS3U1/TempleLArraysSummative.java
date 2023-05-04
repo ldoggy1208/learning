@@ -1,6 +1,12 @@
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+/* This is a file to show my understanding of arrays
+ * 
+ * @Author Temple
+ * @Date May 1st 2023
+ * @Version 1.0
+ */
 public class TempleLArraysSummative {
     static double average;
     public static void main(String[] args) {
