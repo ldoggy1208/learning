@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TempleLArraysTest",
+            "request": "launch",
+            "mainClass": "TempleLArraysTest",
+            "projectName": "learning_6e3b7e13"
+        },
+        {
+            "type": "java",
             "name": "gridArrays",
             "request": "launch",
             "mainClass": "gridArrays",
