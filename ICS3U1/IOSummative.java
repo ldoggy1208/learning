@@ -10,22 +10,13 @@ public class IOSummative {
     static String phonebook[][] = new String[20][2];
     static String fileName = "Phonebook.txt";
     public static void main(String[] args) throws IOException{
-        updatePhonebook();
         Scanner scan = new Scanner(System.in);
-        String[][] phonebook = readFile("phonebook.txt");
-		PrintWriter print = new PrintWriter(new BufferedWriter(new FileWriter("phonebook.txt")));
-		deleteNamePhone(phonebook);
-		for(int i = 0; i < phonebook.length; i++) {
-			if(phonebook[i][0] != null)
-				print.print(String.join(", ", phonebook[i][0], phonebook[i][1]) + "\n");
-		}
-		print.close();
-
+        updatePhonebook();
         try {
             while (true) {
                 int choice;
-                System.out.println("#### Phonebook###\n\n1-Display phonebook\n2-Search for name\n3-Search phone number\n4-Add name and phone number\n5-Delete name\n6-Update name\n7-Update number\n7-Exit");
-                System.out.print("\n\nChoose your option\n>");
+                System.out.println("#### Phonebook###\n\n1-Display phonebook\n2-Search for name\n3-Search phone number\n4-Add name and phone number\n5-Delete contact\n6-Update name\n7-Update number\n8-Exit");
+                System.out.print("\nChoose your option\n>");
                 choice = scan.nextInt();
     
                 if (choice == 1) {
@@ -33,11 +24,11 @@ public class IOSummative {
                 }
     
                 else if (choice == 2) {
-    
+                    searchName(phonebook);
                 }
     
                 else if (choice == 3) {
-    
+                    searchPhoneNumber(phonebook);
                 }
     
                 else if (choice == 4) {
@@ -68,8 +59,8 @@ public class IOSummative {
         }
         catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
-
         }
+        scan.close();
     }//end of main
 
     private static void updateName() throws IOException{
@@ -80,6 +71,7 @@ public class IOSummative {
         String name = scan.next();
         phonebook[choice][0] = name;
         updatePhonebook();
+        scan.close();
     }//end of updateName
 
     private static void updatePhone() throws IOException{
@@ -90,6 +82,7 @@ public class IOSummative {
         String phone = scan.next();
         phonebook[choice][1] = phone;
         updatePhonebook();
+        scan.close();
     }//end of updatePhone
 
     private static void exit() {
@@ -97,15 +90,13 @@ public class IOSummative {
     }//end of exit
 
     private static void updatePhonebook() throws IOException{
-        FileWriter fw = new FileWriter(fileName);
-        int contactNumber = 0;
-        for (int i = 0; i < phonebook.length; i++) {
-            contactNumber += 1;
-            fw.write(contactNumber);
-            for (int index = 0; index < 2; index++) {
-                fw.write(" - "+phonebook[i][index]);
-            }
-        }
+        String[][] phonebook = readFile("phonebook.txt");
+		PrintWriter print = new PrintWriter(new BufferedWriter(new FileWriter("phonebook.txt")));
+		for(int i = 0; i < phonebook.length; i++) {
+			if(phonebook[i][0] != null)
+				print.print(String.join(", ", phonebook[i][0], phonebook[i][1]) + "\n");
+		}
+		print.close();
     }//end of updatePhonebook
 
     private static String[][] readFile(String filename) {
@@ -127,11 +118,39 @@ public class IOSummative {
 		return phonebook;
 	}//end of readfile
 
-    private static void deleteNamePhone(String[][] phonebook) {
+    private static void deleteNamePhone(String[][] phonebook) throws IOException{
         Scanner scan = new Scanner(System.in);
 		System.out.print("Input the row # that you would like to delete: ");
 		int rowNum = scan.nextInt();
 		phonebook[rowNum] = new String[2];
+        scan.close();
+        updatePhonebook();
 	}//end of deleteNamePhone
+
+    private static void searchPhoneNumber(String[][] phonebook) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("\nInput the phone number to search for\n>");
+        String search = scan.next();
+        for (int i = 0; i < phonebook.length; i++) {
+            if (phonebook[i][1] == search) {
+                String name = phonebook [i][0];
+                System.out.println(search+" is "+name+"'s phone number");
+            }
+        }
+        scan.close();
+    }//end of searchPhoneNumber
+
+    private static void searchName(String[][] phonebook) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("\nInput the name to search for\n>");
+        String search = scan.next();
+        for (int i = 0; i < phonebook.length; i++) {
+            if (phonebook[i][0] == search) {
+                String number = phonebook[i][1];
+                System.out.println(search+"'s phone number is "+number);
+            }
+        }
+        scan.close();
+    }//end of searchName
 
 }//end of class

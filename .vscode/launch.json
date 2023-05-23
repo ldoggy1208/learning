@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "IOSummative",
+            "request": "launch",
+            "mainClass": "IOSummative",
+            "projectName": "learning_6e3b7e13"
+        },
+        {
+            "type": "java",
             "name": "IOSummativeTemple",
             "request": "launch",
             "mainClass": "IOSummativeTemple",
