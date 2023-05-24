@@ -120,7 +120,6 @@ public class IOSummative {
     private static void deleteNamePhone(String[][] phonebook) throws IOException{
 		System.out.print("Input the row # that you would like to delete: ");
 		int rowNum = Integer.parseInt(scan.nextLine()) - 1;
-		phonebook[rowNum] = new String[2];
         for (;rowNum < phonebook.length - 1; rowNum++) {
             phonebook[rowNum] = phonebook[rowNum + 1];
         }
