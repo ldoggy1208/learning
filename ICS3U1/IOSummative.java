@@ -13,8 +13,7 @@ public class IOSummative {
     static String fileName = "Phonebook.txt";
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) throws IOException{
-        updatePhonebook();
-        String phonebook[][] = new String[20][2];
+        String phonebook[][] = readFile(fileName);
         try {
             while (true) {
                 int choice;
@@ -67,32 +66,31 @@ public class IOSummative {
 
     private static void updateName(String[][] phonebook) throws IOException{
         System.out.print("\nInput the row # of which the name you would like to update\n>");
-        int choice = scan.nextInt() - 1;
+        int choice = Integer.parseInt(scan.nextLine()) - 1;
         if (phonebook[choice][0] == null && phonebook[choice][1] == null) {
             choice++;
         }
         System.out.print("\nWhat would you like to change the name to?\n>");
-        String name = scan.next();
+        String name = scan.nextLine();
         phonebook[choice][0] = name;
-        updatePhonebook();
+        updatePhonebook(phonebook);
     }//end of updateName
 
     private static void updatePhone(String[][] phonebook) throws IOException{
         System.out.print("\nInput the row # of which the number you would like to update\n>");
-        int choice = scan.nextInt() - 1;
+        int choice = Integer.parseInt(scan.nextLine()) - 1;
         System.out.print("\nWhat would you like to change the number to?\n>");
-        String phone = scan.next();
+        String phone = scan.nextLine();
         phonebook[choice][1] = phone;
-        updatePhonebook();
+        updatePhonebook(phonebook);
     }//end of updatePhone
 
     private static void exit() {
         System.exit(0);
     }//end of exit
 
-    private static void updatePhonebook() throws IOException{
-        String[][] phonebook = readFile("phonebook.txt");
-		PrintWriter print = new PrintWriter(new BufferedWriter(new FileWriter("phonebook.txt")));
+    private static void updatePhonebook(String[][] phonebook) throws IOException{
+		PrintWriter print = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
 		for(int i = 0; i < phonebook.length; i++) {
 			if(phonebook[i][0] != null)
 				print.print(String.join(", ", phonebook[i][0], phonebook[i][1]) + "\n");
@@ -121,20 +119,20 @@ public class IOSummative {
 
     private static void deleteNamePhone(String[][] phonebook) throws IOException{
 		System.out.print("Input the row # that you would like to delete: ");
-		int rowNum = Integer.parseInt(scan.nextLine());
+		int rowNum = Integer.parseInt(scan.nextLine()) - 1;
 		phonebook[rowNum] = new String[2];
         for (;rowNum < phonebook.length - 1; rowNum++) {
             phonebook[rowNum] = phonebook[rowNum + 1];
         }
         phonebook[rowNum] = new String[2];
-        updatePhonebook();
+        updatePhonebook(phonebook);
 	}//end of deleteNamePhone
 
     private static void searchPhoneNumber(String[][] phonebook) {
         System.out.print("\nInput the phone number to search for\n>");
         String search = scan.nextLine();
-        for (int i = 0; i < phonebook.length; i++) {
-            if (phonebook[i][1] == search) {
+        for (int i = 0; i< phonebook.length && phonebook[i][1] != null ; i++) {
+            if (phonebook[i][1].equals(search)) {
                 String name = phonebook [i][0];
                 System.out.println(search+" is "+name+"'s phone number");
             }
@@ -144,7 +142,7 @@ public class IOSummative {
     private static void searchName(String[][] phonebook) {
         System.out.print("\nInput the name to search for\n>");
         String search = scan.nextLine();
-        for (int i = 0; i < phonebook.length; i++) {
+        for (int i = 0; i< phonebook.length && phonebook[i][0] != null; i++) {
             if (phonebook[i][0].equals(search)) {
                 String number = phonebook[i][1];
                 System.out.println(search+"'s phone number is "+number);
@@ -181,6 +179,6 @@ public class IOSummative {
 		}
 		else
 			System.out.println("NO EMPTY SPACE IN PHONEBOOK");
-        updatePhonebook();
+        updatePhonebook(phonebook);
 	}//end of addNamePhone
 }//end of class
