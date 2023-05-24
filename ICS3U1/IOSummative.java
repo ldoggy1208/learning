@@ -1,10 +1,14 @@
 import java.io.FileWriter;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+
 
 public class IOSummative {
     static String phonebook[][] = new String[20][2];
@@ -20,7 +24,7 @@ public class IOSummative {
                 choice = scan.nextInt();
     
                 if (choice == 1) {
-    
+                    displayPhonebook();
                 }
     
                 else if (choice == 2) {
@@ -32,7 +36,7 @@ public class IOSummative {
                 }
     
                 else if (choice == 4) {
-    
+                    addNamePhone(phonebook);
                 }
                 
                 else if (choice == 5) {
@@ -67,6 +71,9 @@ public class IOSummative {
         Scanner scan = new Scanner(System.in);
         System.out.print("\nInput the row # of which the name you would like to update\n>");
         int choice = scan.nextInt() - 1;
+        if (phonebook[choice][0] == null && phonebook[choice][1] == null) {
+            choice++;
+        }
         System.out.print("\nWhat would you like to change the name to?\n>");
         String name = scan.next();
         phonebook[choice][0] = name;
@@ -121,8 +128,12 @@ public class IOSummative {
     private static void deleteNamePhone(String[][] phonebook) throws IOException{
         Scanner scan = new Scanner(System.in);
 		System.out.print("Input the row # that you would like to delete: ");
-		int rowNum = scan.nextInt();
+		int rowNum = Integer.parseInt(scan.nextLine());
 		phonebook[rowNum] = new String[2];
+        for (;rowNum < phonebook.length - 1; rowNum++) {
+            phonebook[rowNum] = phonebook[rowNum + 1];
+        }
+        phonebook[rowNum] = new String[2];
         scan.close();
         updatePhonebook();
 	}//end of deleteNamePhone
@@ -152,5 +163,39 @@ public class IOSummative {
         }
         scan.close();
     }//end of searchName
+
+    public static void displayPhonebook() {
+		try {
+			File phonefile = new File(fileName);
+			Scanner findIt = new Scanner(phonefile);
+			while (findIt.hasNextLine()) {
+			    String data = findIt.nextLine();
+			    System.out.println(data);
+			//FileReader input = new FileReader(Phonebooktxt); 
+			}
+			findIt.close();
+		    System.out.println("\n");
+		}
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("record not found please import \\"+fileName);
+			System.out.println("\n");
+		}
+    }//end of displayPhonebook
+
+    private static void addNamePhone(String[][] phonebook) {
+        Scanner scan = new Scanner(System.in);
+		int i = 0;
+		for(; i < phonebook.length && phonebook[i][0] != null; i++) {}
+		if(i < phonebook.length) {
+			System.out.print("Input the name of the contact you would like to add: ");
+			phonebook[i][0] = scan.nextLine();
+			System.out.print("Input the phone number of the contact you would like to add: ");
+			phonebook[i][1] = scan.nextLine();
+		}
+		else
+			System.out.println("NO EMPTY SPACE IN PHONEBOOK");
+	}//end of addNamePhone
+
 
 }//end of class
