@@ -167,10 +167,11 @@ public class IOSummative {
 		}
     }//end of displayPhonebook
 
-    private static void addNamePhone(String[][] phonebook)throws IOException {
+    private static void addNamePhone(String[][] phonebook) throws IOException {
 		int i = 0;
-		for(; i < phonebook.length && phonebook[i][0] != null; i++) {}
-		if(i < phonebook.length) {
+		for (; i < phonebook.length && phonebook[i][0] != null; i++) {}
+
+		if (i < phonebook.length) {
 			System.out.print("Input the name of the contact you would like to add: ");
 			phonebook[i][0] = scan.nextLine();
 			System.out.print("Input the phone number of the contact you would like to add: ");

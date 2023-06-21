@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Temple_Liam_FinalExam",
+            "request": "launch",
+            "mainClass": "Temple_Liam_FinalExam",
+            "projectName": "learning_6e3b7e13"
+        },
+        {
+            "type": "java",
+            "name": "MichaelSkybaPaperTennisFinal",
+            "request": "launch",
+            "mainClass": "MichaelSkybaPaperTennisFinal",
+            "projectName": "learning_6e3b7e13"
+        },
+        {
+            "type": "java",
             "name": "IOSummative",
             "request": "launch",
             "mainClass": "IOSummative",
