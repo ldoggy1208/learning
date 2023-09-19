@@ -76,7 +76,7 @@ def Convert(var):
         if values[var][num] == 1:
             final += 2**num
         num += 1
-    print(final)
+    return(final)
         
 file = open("aoc2015/day7test.txt", "r")
 lines = file.readlines()
