@@ -83,5 +83,4 @@ while ynum < 1000:
         xnum += 1
     ynum += 1
     xnum = 0
-print(totalLights)
-        
+print(totalLights)   

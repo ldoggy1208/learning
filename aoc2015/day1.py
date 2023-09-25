@@ -13,5 +13,3 @@ for instruction in instructions:
         print(i)
         
 print(floor)
-
-
