@@ -1,5 +1,5 @@
 /*This is a program to show my understanding of how 1D arrays work in java
-
+ *
  *@Author Temple
  *@Date Feb 12 2024
  *@Version 1.0
