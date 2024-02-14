@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TempleArray1",
+            "request": "launch",
+            "mainClass": "TempleArray1",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "TempleLArrays",
+            "request": "launch",
+            "mainClass": "TempleLArrays",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Temple_Liam_FinalExam",
             "request": "launch",
             "mainClass": "Temple_Liam_FinalExam",
