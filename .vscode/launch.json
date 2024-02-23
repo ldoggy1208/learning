@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TempleArray2",
+            "request": "launch",
+            "mainClass": "TempleArray2",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "TempleArray1",
             "request": "launch",
             "mainClass": "TempleArray1",
