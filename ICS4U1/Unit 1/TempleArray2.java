@@ -14,9 +14,10 @@ public class TempleArray2 {
     private static final int firstName = 1;
     private static final int lastName = 2;
     private static final int studentMark = 3;
+    static Random Random = new Random(System.in);
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        for (i=0; i < students.length; i++) {
+        for (int i=0; i < students.length; i++) {
             randomizeStudents(i);
         }
         home();
@@ -39,8 +40,8 @@ public class TempleArray2 {
             studentNumber = "340888700";
         }
         else {
-            for (i = 0; i < 9; i++) {
-                studentNumber = (studentNumber + Integer.toString(Random.nextInt(10)));
+            for (int i = 0; i < 9; i++) {
+                studentNumber = (String.valueOf(studentNumber + Random.nextInt(10)));
             }
         }
         students[slot][studentNum] = studentNumber;
@@ -74,7 +75,7 @@ public class TempleArray2 {
                 max = students[i][studentMark];
                 maxPos = i;
             }
-            else if (studentt[i][studentMark].parseInt < min) {
+            else if (students[i][studentMark].parseInt < min) {
                 min = students[i][studentMark];
                 minPos = i;
             }
@@ -232,7 +233,7 @@ public class TempleArray2 {
      */
     private static void home() {
         System.out.print("\n\nWelcome to student menu config. choose an option to do. Valid options are:\n1. Sum marks\n2. Average marks\n3. Minimum and Maximum marks\n4. Display students\n5. Customize students\n6. Randomize students\n7. Increase students size (Warning. Randomizes students when done.)\n8. Close the program.\n\n>");
-        selection = scan.nextLine();
+        String selection = scan.nextLine();
         switch (selection) {
             case "1":
                 sumMarks();
