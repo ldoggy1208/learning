@@ -5,7 +5,8 @@
  * This is a file used to show my understanding of 2 dimensional arrays 
  */
 import java.util.Scanner;
-import java.util.random.*;
+import java.util.Random;
+import java.util.InputMismatchException;
 
 import javax.swing.plaf.TreeUI;
 public class TempleArray2 {
@@ -14,8 +15,8 @@ public class TempleArray2 {
     private static final int firstName = 1;
     private static final int lastName = 2;
     private static final int studentMark = 3;
-    static Random Random = new Random(System.in);
     static Scanner scan = new Scanner(System.in);
+    static Random Random = new Random();
     public static void main(String[] args) {
         for (int i=0; i < students.length; i++) {
             randomizeStudents(i);
@@ -32,9 +33,9 @@ public class TempleArray2 {
         String[] lastNamesList = {"Skyba", "Searle", "Morton", "Temple", "Brooks", "Simmerson", "Fuerth", "Heath", "Herdman", "Smith", "Ramos", "Riley", "Francis", "Woodhouse", "Suhr"};
         System.out.println(firstNamesList.length);
         System.out.println(lastNamesList.length);
-        students[slot][firstName] = firstNamesList[Random.nextInt(firstNamesList.length++)];
-        students[slot][lastName] = lastNamesList[Random.nextInt(lastNamesList.length++)];
-        students[slot][studentMark] = (Random.nextInt(101));
+        students[slot][firstName] = firstNamesList[Random.nextInt(firstNamesList.length)];
+        students[slot][lastName] = lastNamesList[Random.nextInt(lastNamesList.length)];
+        students[slot][studentMark] = (String.valueOf(Random.nextInt(101)));
         String studentNumber = "";
         if (students[slot][firstName] == "Liam"&& students[slot][lastName] == "Temple") {
             studentNumber = "340888700";
@@ -55,7 +56,7 @@ public class TempleArray2 {
     private static void sumMarks() {
         int sum = 0;
         for (int i = 0; i < students.length; i++) {
-            sum += students[i][studentMark].parseInt;
+            sum += Integer.parseInt(students[i][studentMark]);
         }
         System.out.println("The sum of all marks is "+sum);
         return;
@@ -66,17 +67,17 @@ public class TempleArray2 {
      *@Returns - Nothing
      */
     private static void minMax() {
-        int min = students[0][studentMark].parseInt;
-        int max = students[0][studentMark].parseInt;
+        int min = Integer.parseInt(students[0][studentMark]);
+        int max = Integer.parseInt(students[0][studentMark]);
         int minPos = 0;
         int maxPos = 0;
         for (int i = 1; i < students.length; i++) {
-            if (students[i][studentMark].parseInt > max) {
-                max = students[i][studentMark];
+            if (Integer.parseInt(students[i][studentMark]) > max) {
+                max = Integer.parseInt(students[i][studentMark]);
                 maxPos = i;
             }
-            else if (students[i][studentMark].parseInt < min) {
-                min = students[i][studentMark];
+            else if (Integer.parseInt(students[i][studentMark]) < min) {
+                min = Integer.parseInt(students[i][studentMark]);
                 minPos = i;
             }
         }
@@ -91,7 +92,7 @@ public class TempleArray2 {
     private static void average() {
         int total = 0;
         for (int i = 0; i < students.length; i++) {
-            total += students[i][studentMark].parseInt;
+            total += Integer.parseInt(students[i][studentMark]);
         }
         double Average = total/students.length;
         System.out.println("The average student mark is " + Average);
@@ -104,7 +105,7 @@ public class TempleArray2 {
      */
     private static void customAdd() {
         int changeSlot;
-        System.out.print("\n\nThere are " + students.length + "students in this class. \n Which student slot would you like to change?\n>");
+        System.out.print("\n\nThere are " + students.length + " students in this class. \n Which student slot would you like to change?\n>");
         try {
             changeSlot = scan.nextInt() - 1;
         }
@@ -120,15 +121,17 @@ public class TempleArray2 {
         }
         else {
             System.out.print("\n\nInput the first name\n>");
+            scan.nextLine();
             nameChanger(firstName, changeSlot);
-            System.out.print("\n\nInput the first name\n>");
-            nameChanger(lastName, changeSlot);
+            
+            System.out.print("\n\nInput the last name\n>");
+            students[changeSlot][lastName] = scan.nextLine();
             numberChanger(changeSlot);
             markChanger(changeSlot);
         }
     }//end of customAdd
-    
-    /*@Description - changes either the first or last name of the student int he specific slot
+
+    /*@Description - changes the first or last name of the student int he specific slot
      *@Parameters - Whether it's the first or last name being changed, student slot
      *@Returns - Nothing
      */
@@ -166,9 +169,9 @@ public class TempleArray2 {
      */
     private static void markChanger(int slot) {
         System.out.print("\n\nInput the new mark for the student between 0-100.\n>");
-        string newMark = scan.nextLine();
+        String newMark = scan.nextLine();
         try {
-            int testNum = newMark.parseInt;
+            int testNum = Integer.parseInt(newMark);
         }
         catch (InputMismatchException e) {
             System.out.println("That is not a number. Try again.");
@@ -176,7 +179,7 @@ public class TempleArray2 {
             return;
         }
 
-        if (newMark.parseInt >= 0 && newMark.parseInt <= 100) {
+        if (Integer.parseInt(newMark) >= 0 && Integer.parseInt(newMark) <= 100) {
             students[slot][studentMark] = newMark;
         }
         else {
@@ -222,7 +225,7 @@ public class TempleArray2 {
      */
     private static void display() {
         for (int col = 0; col < students.length; col++) {
-            System.out.println("Student name: " + students[col][firstName] + " " + students[col][lastName] + ", Student #: " + students[col][studentNum] + ", Student mark: " + studentMark);
+            System.out.println("Student name: " + students[col][firstName] + " " + students[col][lastName] + ", Student #: " + students[col][studentNum] + ", Student mark: " + students[col][studentMark]);
         }
         return;
     }//end of display
@@ -237,27 +240,35 @@ public class TempleArray2 {
         switch (selection) {
             case "1":
                 sumMarks();
+                break;
             case "2":
                 average();
+                break;
             case "3":
                 minMax();
+                break;
             case "4":
                 display();
+                break;
             case "5":
                 customAdd();
+                break;
             case "6": 
                 for (int i = 0; i < students.length; i++) {
                     randomizeStudents(i);
                 }
+                break;
             case "7":
                 studentsSizeChanger();
+                break;
             case "8":
                 System.out.println("Goodbye!");
+                scan.close();
                 return;
             default:
                 System.out.println("Invalid input");
                 break;
         }
         home();
-    }//end of home
+    }//end of home;
 }//end of class
