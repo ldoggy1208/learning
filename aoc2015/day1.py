@@ -11,5 +11,4 @@ for instruction in instructions:
     if floor < 0 and not first:
         first = True
         print(i)
-        
 print(floor)
