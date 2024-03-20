@@ -1,159 +1,262 @@
-/*This is a program to show my understanding of how 1D arrays work in java
+/*This is a program to show my understanding of how to implement sorting algorithms
  *
  *@Author Temple
- *@Date Feb 12 2024
+ *@Date Mar 20 2024
  *@Version 1.0
  */
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 import java.lang.Math;
 public class TempleArray1 {
     static int[] array = new int[1000];
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        InitializeArray();
-        Randomize();
+        InitializeArray(array);
+        Randomize(array);
         base();
-        //initailize the array and start the menu for selecting options
     }//end of main method
 
-    private static void InitializeArray() {
+    /*@Description - Sets all the elements in the array to -1 to be later randomized
+     *@Parameters - array to be initialized
+     *@Returns - Nothing
+     */
+    private static void InitializeArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = -1;
-        }//sets each of the 10 positions in the array to -1
-        System.out.println("Array Initialized.");
+        }
     }//end of InitailizeArray method
 
-    private static void EnterFromKeyboard() {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print("\nInput a number to put in the array!\n>");
-            try {
-                int UserInput = scan.nextInt();
-                array[i] = UserInput;  
-            } //tries to input the inputted number
-            catch (InputMismatchException e) {
-                System.out.println("That's not a valid number, sorry.");
-                InitializeArray();
-                return;
-            }//if the number isn't valid, restarts this method. Innefective but possible.
-        
-        }
-        System.out.println("Array Entered");
-        return;
-    }//end of EnterFromKeyboard Method
-
-    private static void Randomize() {
+    /*@Description - randomizes all of the elements in the array
+     *@Parameters - array to be randomized
+     *@Returns - Nothing
+     */
+    private static void Randomize(int[] array) {
         for (int i=0; i<array.length; i++) {
-            array[i] = (int)(Math.random() * 99) + 1;
-            System.out.println("Array Randomized");
-        }//sets each position in the array to a number between 1 and 100
+            array[i] = (int)(Math.random() * 100) + 1;
+        }
     }//end of randomize method
 
+    /*@Description - Displays the array for the user to see
+     *@Parameters - Nothing
+     *@Returns - Nothing
+     */
     private static void Display() {
         System.out.println();
         for (int i=0; i<array.length; i++) {
             System.out.print(array[i]+ " : ");
-        }//shows all the choices in the array
+        }
     }//end of Display method
 
-    private static void Sum() {
-        int sum = 0;
-        for (int i=0; i<array.length; i++) {
-            sum += array[i];
-        }//adds together all the numbers in the array and prints them.
-        System.out.println(sum+" is the sum of the array");
-    }//end of Sum method
-
-    private static void Average() {
-        int total = 0;
-        for (int i=0; i<array.length; i++) {
-            total += array[i];
-        }//adds together all of the numbers in the array and divides them by 10 
-        System.out.println(total/10+" Is the average of the array");
-    }//end of Average method
-
-    private static void Search() {
-        System.out.print("\nInput the number you are looking for\n>");
-        String num = scan.nextLine();
-        boolean found = false;
-        for (int i = 0; i<array.length; i++) {
-            if (String.valueOf(array[i]).equals(num)) {
-            found = true;
-            }//checks to see if the number you want to look for is in the array at all
-        }
-        if (found == false) {
-            System.out.println("The number you were searching for was not found in the array.");
-        }//if the number you are looking for is invalid or not in the array this will print.
-        else {
-            System.out.print("\nThe number "+ num +" is located at positions: ");
-            for (int i = 0; i < array.length; i++) {
-                if (String.valueOf(array[i]).equals(num)) {
-                    System.out.print(i + ", ");
-                }//prints the positions of all the number looked for in the array
-            }
-        }
-    }//end of Search Method
-
-    private static void sortAscendingBubble() {
-        i = array.length-1;
+    /*@Description - Sorts the array from lowest to highest using bubble sort
+     *@Parameters - array to be sorted
+     *@Returns - Nothing
+     */
+    private static void sortAscendingBubble(int[] array) {
+        int swaps = 0;
+        int comparisons = 0;
+        int startTime = System.currentTimeMillis();
+        int i = array.length-1;
         while (2 <= i) {
             for (int j = 0; j < i; j++) {
                 if (array[j] > array[j+1]) {
                     int held = array[j];
                     array[j] = array[j+1];
                     array[j+1] = held;
+                    swaps++;
                 }
+            comparisons++;
             }
             i--;
         }
+        System.out.println("Ascending Bubble Sort complete.\nTime took was "+ (System.currentTimeMillis() - startTime) + "\nThere were " + swaps + " Swaps and " + comparisons + " Comparisons");
+    }//end of sortAscendingBubble
+
+    /*@Description - Sorts the array from highest to lowest using bubble sort
+     *@Parameters - array to be sorted
+     *@Returns - Nothing
+     */
+    private static void sortDescendingBubble(int[] array) {
+        int comparisons = 0;
+        int swaps = 0;
+        int startTime = System.currentTimeMillis();
+        int i = array.length-1;
+        while (2 <= i) {
+            for (int j = 0; j < i; j++) {
+                if (array[j] < array[j+1]) {
+                    int held = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = held;
+                    swaps++;
+                }
+                comparisons++;
+            }
+            i--;
+        }
+        System.out.println("Descending Bubble Sort complete.\nTime took was "+ (System.currentTimeMillis() - startTime) + "\nThere were " + swaps + " Swaps and " + comparisons + " Comparisons");
+    }//end of sortDescendingBubble
+
+    /*@Description - Sorts the array from lowest to highest using Selection sort
+     *@Parameters - array to be sorted
+     *@Returns - Nothing
+     */
+    private static void sortAscendingSelection(int[] array) {
+    int startTime = System.currentTimeMillis();
+    int comparisons = 0;
+    int i = 0;
+    while (i < array.length-1) {
+        int min = array[i];
+        int minpos = i;
+        for (int j = i+1; j < array.length-1; j++) {
+            if (array[j] < min) {
+                min = array[j];
+                minpos = j;
+            }
+            comparisons++;
+        }
+        array[minpos] = array[i];
+        array[i] = min;
+        i++;
     }
-    private static void sortDescendingBubble() {
-        
+    System.out.println("Ascending Selection sort complete.\nTime took was "+ (System.currentTimeMillis() - startTime) + "\nThere was " + comparisons + " Comparisons" );
+    }//end of sortAscendingSelection
+
+    /*@Description - Sorts the array from highest to lowest using selection sort
+     *@Parameters - array to be sorted
+     *@Returns - Nothing
+     */
+    private static void sortDescendingSelection(int[] array) {
+        int comparisons = 0;
+        int startTime = System.currentTimeMillis();
+        int i = 0;
+        while (i < array.length-1) {
+            int max = array[i];
+            int maxpos = i;
+            for (int j = i+1; j < array.length-1; j++) {
+                if (array[j] > max) {
+                    max = array[j];
+                    maxpos = j;
+                }
+                comparisons++;
+            }
+            array[maxpos] = array[i];
+            array[i] = max;
+            i++;
+        }
+        System.out.println("Descending Selection sort complete.\nTime took was "+ (System.currentTimeMillis() - startTime) + "\nThere was " + comparisons + " Comparisons" );
+    }//end of sortDescendingSelection
+
+    /*@Description - Sorts the array from lowest to highest using Insertion sort
+     *@Parameters - array to be sorted
+     *@Returns - Nothing
+     */
+    private static void sortAscendingInsertion(int[] array) {
+        int comparisons = 0;
+        int swaps = 0;
+        int startTime = System.currentTimeMillis();
+        int pos = 1;
+        while (pos < array.length) {
+            int current = array[pos];
+            int i = pos - 1;
+            comparisons++;
+            while (i >= 0 && array[i] > current) {
+                array[i + 1] = array[i];
+                i--;
+                swaps++;
+            }
+            array[i + 1] = current;
+            pos++;
+        }
+        System.out.println("Ascending Insertion sort complete.\nTime took was "+ (System.currentTimeMillis() - startTime)  + "\nThere were " + swaps + " Swaps and " + comparisons + " Comparisons");
+    }//end of sortAscendingInsertion
+
+    /*@Description - Sorts the array from highest to lowest using insertion sort
+     *@Parameters - array to be sorted
+     *@Returns - Nothing
+     */
+    private static void sortDescendingInsertion(int[] array) {
+        int comparisons = 0;
+        int swaps = 0;
+        int startTime = System.currentTimeMillis();
+        int pos = 1;
+        while (pos < array.length) {
+            int current = array[pos];
+            int i = pos - 1; 
+            comparisons++;   
+            while (i >= 0 && array[i] < current) {
+                array[i + 1] = array[i];
+                i--;
+                swaps++;
+            }
+            array[i + 1] = current;
+            pos++;
     }
-    private static void sortAscendingSelection() {
-        
-    }
-    private static void sortDescendingSelection() {
-        
-    }
-    private static void sortAscendingInsertion() {
-        
-    }
-    private static void sortDescendingInsertion() {
-        
-    }
+    System.out.println("Descending Insertion sort complete.\nTime took was "+ (System.currentTimeMillis() - startTime)  + "\nThere were " + swaps + " Swaps and " + comparisons + " Comparisons");
+    }//end of sortDescendingInsertion
+
+    /*@Description - the final boss of the sorting algorithm. tests all the algorithms with 10000 slots instead of 1000
+     *@Parameters - Nothing
+     *@Returns - Nothing
+     */
+    private static void Summary() {
+        int[] newArray = new int[10000];
+        InitializeArray(newArray);
+        Randomize(newArray);
+        sortAscendingBubble(newArray);
+        Randomize(newArray);
+        sortDescendingBubble(newArray);
+        Randomize(newArray);
+        sortAscendingSelection(newArray);
+        Randomize(newArray);
+        sortDescendingSelection(newArray);
+        Randomize(newArray);
+        sortAscendingInsertion(newArray);
+        Randomize(newArray);
+        sortDescendingInsertion(newArray);
+    }//end of summary
+
+    /*@Description - The central hub of everything to be run
+     *@Parameters - Nothing
+     *@Returns - Nothing
+     */
     private static void base() {
-        System.out.print("\nValid Options are as follows:\n1. Initialize array\n2. Enter Numbers From Keyboard\n3. Randomize Array\n4. Display Array\n5. Sum Array\n6. Average Array\n7. Search in Array\n8. Exit\n\nInput Selection\n>");
+        System.out.print("\nValid Options are as follows:\n1. Bubble Sort (Ascending)\n2. Bubble Sort (Descending)\n3. Selection Sort (Ascending)\n4. Selection Sort (Descending)\n5. Insertion Sort (Ascending)\n6. Insertion Sort (Descending)\n7. Display Array\n8. Randomize Array\n9. Summary\n10. Exit\n\nInput Selection\n>");
         String selection = scan.nextLine();
         switch (selection) {
             case "1":
-                sortAscendingBubble();
+                sortAscendingBubble(array);
                 break;
             case "2":
-                EnterFromKeyboard();
+                sortDescendingBubble(array);
                 break;
             case "3":
-                Randomize();
+                sortAscendingSelection(array);
                 break;
             case "4":
-                Display();
+                sortDescendingSelection(array);
                 break;
             case "5":
-                sortAscendingBubble();
+                sortAscendingInsertion(array);
                 break;
             case "6":
-                Average();
+                sortDescendingInsertion(array);
                 break;
             case "7":
-                Search();
+                Display();
                 break;
             case "8":
+                Randomize();
+                break;
+            case "9":
+                Summary();
+                break;
+            case "10":
                 System.out.println("Goodbye!");
                 return;
             default:
                 System.out.println("Invalid input.");
                 break;
-        }//givevs the options and makes you choose one to print and brings you to that method
+        }
         base();
     }// end of base method
 }//end of class
