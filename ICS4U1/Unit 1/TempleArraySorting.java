@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 import java.lang.Math;
-public class TempleArray1 {
+public class TempleArraySorting {
     static int[] array = new int[1000];
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
