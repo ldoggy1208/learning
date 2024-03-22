@@ -245,7 +245,7 @@ public class TempleArray1 {
                 Display();
                 break;
             case "8":
-                Randomize();
+                Randomize(array);
                 break;
             case "9":
                 Summary();
