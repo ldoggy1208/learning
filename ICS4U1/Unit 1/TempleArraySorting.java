@@ -55,7 +55,7 @@ public class TempleArray1 {
     private static void sortAscendingBubble(int[] array) {
         int swaps = 0;
         int comparisons = 0;
-        int startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         int i = array.length-1;
         while (2 <= i) {
             for (int j = 0; j < i; j++) {
@@ -79,7 +79,7 @@ public class TempleArray1 {
     private static void sortDescendingBubble(int[] array) {
         int comparisons = 0;
         int swaps = 0;
-        int startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         int i = array.length-1;
         while (2 <= i) {
             for (int j = 0; j < i; j++) {
@@ -101,7 +101,7 @@ public class TempleArray1 {
      *@Returns - Nothing
      */
     private static void sortAscendingSelection(int[] array) {
-    int startTime = System.currentTimeMillis();
+    long startTime = System.currentTimeMillis();
     int comparisons = 0;
     int i = 0;
     while (i < array.length-1) {
@@ -127,7 +127,7 @@ public class TempleArray1 {
      */
     private static void sortDescendingSelection(int[] array) {
         int comparisons = 0;
-        int startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         int i = 0;
         while (i < array.length-1) {
             int max = array[i];
@@ -153,7 +153,7 @@ public class TempleArray1 {
     private static void sortAscendingInsertion(int[] array) {
         int comparisons = 0;
         int swaps = 0;
-        int startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         int pos = 1;
         while (pos < array.length) {
             int current = array[pos];
@@ -177,7 +177,7 @@ public class TempleArray1 {
     private static void sortDescendingInsertion(int[] array) {
         int comparisons = 0;
         int swaps = 0;
-        int startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         int pos = 1;
         while (pos < array.length) {
             int current = array[pos];
