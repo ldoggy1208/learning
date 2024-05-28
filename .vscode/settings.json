@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
-        "ICS3U1",
-        "random_stuff"
+        "ICS4U1/Unit 2/TempleLMinesClearing",
+        "ICS4U1/Unit 1"
     ],
     "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable",
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.referencedLibraries": []
 }

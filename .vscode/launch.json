@@ -6,6 +6,83 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Appstatic",
+            "request": "launch",
+            "mainClass": "Appstatic",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "rbtMaze",
+            "request": "launch",
+            "mainClass": "rbt.rbtMaze",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "rbtMaze",
+            "request": "launch",
+            "mainClass": "rbtMaze",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "ClearMinesBaseCase",
+            "request": "launch",
+            "mainClass": "ClearMinesBaseCase",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "TempleLArraySearching",
+            "request": "launch",
+            "mainClass": "TempleLArraySearching",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "main",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Marks",
+            "request": "launch",
+            "mainClass": "Marks",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "TempleLTest1",
+            "request": "launch",
+            "mainClass": "TempleLTest1",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "marks",
+            "request": "launch",
+            "mainClass": "marks",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "TempleArray2",
             "request": "launch",
             "mainClass": "TempleArray2",
